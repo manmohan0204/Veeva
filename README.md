@@ -13,4 +13,5 @@ This is a TDD with PageObject framework
 # Run
 -	Test cases are parametrized to support multiple browser (Chrome, Firefox etc..) and run parallely from RunnerFile.xml file
 # Report
-- After execution customized extent report should be generated. 
+- Once execution is completed customized extent report should be generated under target folder and all screenshot and attached file are also located in target folder
+- As target folder will get deleted in each run in order to maintain clean and lightweight size framework.
