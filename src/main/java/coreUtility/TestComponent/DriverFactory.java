@@ -4,8 +4,10 @@ import coreUtility.AbstractComponent.AbstractPage;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 /**
  * <b>Name :</b> DriverFactory </br>
@@ -31,7 +33,9 @@ public class DriverFactory {
         if (threadLocal.get() == null) {
             switch (type) {
                 case "CHROME":
-                    threadLocal.set(new ChromeDriver());
+                    ChromeOptions ccoptions = new ChromeOptions();
+                    ccoptions.addArguments("--incognito");
+                    threadLocal.set(new ChromeDriver(ccoptions));
                     break;
                 case "FIREFOX":
                     threadLocal.set(new FirefoxDriver());
